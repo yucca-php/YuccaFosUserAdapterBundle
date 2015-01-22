@@ -1,0 +1,31 @@
+{
+    "name": "yucca/fos-user-bundle-adapter",
+    "type": "symfony-bundle",
+    "description": "Add an adapter for FosUserBundle",
+    "keywords": ["yucca","user","security","FosUserBundle"],
+    "homepage": "http://github.com/yucca-php/YuccaFosUserAdapterBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rémi JANOT",
+            "email": "r.janot@gmail.com",
+            "homepage": "http://rjanot.github.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "yucca/yucca": ">=1.0.0",
+        "friendsofsymfony/user-bundle": "~2.0@dev"
+    },
+    "autoload": {
+        "psr-0": { "Yucca\\Bundle\\FosUserAdapterBundle": "" }
+    },
+    "minimum-stability": "dev",
+    "target-dir": "Yucca/Bundle/FosUserAdapterBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}

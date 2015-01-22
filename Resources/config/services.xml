@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="yucca_fos_user_adapter.user_manager.class">Yucca\Bundle\FosUserAdapterBundle\Manager\UserManager</parameter>
+        <parameter key="yucca_fos_user.find_users.enabled">false</parameter>
+    </parameters>
+
+    <services>
+        <service id="yucca_fos_user_adapter.user_manager" class="%yucca_fos_user_adapter.user_manager.class%">
+            <argument type="service" id="security.encoder_factory" />
+            <argument type="service" id="fos_user.util.username_canonicalizer" />
+            <argument type="service" id="fos_user.util.email_canonicalizer" />
+            <call method="setFindUsersEnabled"><argument>%yucca_fos_user.find_users.enabled%</argument></call>
+            <call method="setYuccaEntityManager"><argument type="service" id="yucca.entity_manager" /></call>
+            <call method="setModelClassName"><argument>%fos_user.model.user.class%</argument></call>
+            <call method="setSelectorClassName"><argument>%yucca_fos_user.selector.user.class%</argument></call>
+        </service>
+    </services>
+</container>
