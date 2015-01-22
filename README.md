@@ -10,3 +10,5 @@ fos_user:
     service:
         user_manager: acme_user.user.manager
 ```
+
+More informations on https://github.com/FriendsOfSymfony/FOSUserBundle/blob/ef7ca325929ff102fff521653a2e3b88c7a40361/Resources/doc/custom_storage_layer.md
