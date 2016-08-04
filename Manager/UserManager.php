@@ -118,10 +118,7 @@ class UserManager extends BaseUserManager
         $selector = $this->createSelector($criteria);
 
         if (1 != $selector->count()) {
-            throw new \RuntimeException(sprintf(
-                'Should retrieve only one user, but actually %s users found',
-                $selector->count()
-            ));
+            return null;
         }
 
         return $this->yuccaEntityManager->load($this->modelClassName, $selector->current(), $selector->currentShardingKey());
