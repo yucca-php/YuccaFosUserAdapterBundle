@@ -241,6 +241,18 @@ abstract class User extends ModelAbstract implements UserInterface, GroupableInt
     }
 
     /**
+     * @param null|string $salt
+     * @return $this
+     */
+    public function setSalt($salt)
+    {
+        $this->hydrate('salt');
+
+        $this->salt = $salt;
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getEmail()
