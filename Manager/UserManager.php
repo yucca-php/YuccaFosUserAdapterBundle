@@ -84,8 +84,9 @@ class UserManager extends BaseUserManager
 
     /**
      * @param BaseUserInterface $user
+     * @param bool              $andFlush
      */
-    public function updateUser(BaseUserInterface $user)
+    public function updateUser(BaseUserInterface $user, $andFlush = true)
     {
         $this->updateCanonicalFields($user);
         $this->updatePassword($user);
